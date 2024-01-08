@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+    <h1>Objects</h1>
+    
+    <script>
+      // Define Object
+      const person = {
+        name: {
+          first: "Bob",
+          last: "Smith",
+        },
+        age: 32,
+        bio: function () {
+          console.log(`${this.name.first} ${this.name.last} is ${this.age} years old.`);
+        },
+        introduceSelf: function () {
+          console.log(`Hi! I'm ${this.name.first}.`);
+        },
+
+        // Easy way to write a method
+        logProperty (propertyName) {
+          console.log(this[propertyName]);
+        }
+      };
+      
+      // Update the Object after defined it
+      person.hair = "black";
+      
+      //Bracket notation
+      person["eyes"] = "blue";
+
+      person.laught = () => {
+        console.log("hahaha");
+      }
+
+      // Bracket pros
+      const myDataName = "height";
+      const myDataValue = "1.75m";
+      person[myDataName] = myDataValue;
+
+      // Without Constructors
+      function createPerson(name) {
+        const obj = {};
+        obj.name = name;
+        obj.introduceSelf = function () {
+          console.log(`Hi! I'm ${this.name}.`);
+        };
+        return obj;
+      }
+
+      // With Contructor ==> use "new" keyword because it doesn't return
+      function Person(name) {
+        this.name = name;
+        this.introduceSelf = function() {
+          console.log(`Hi! I'm ${this.name}.`);
+        };
+      }
+
+    </script>
+  </body>
+
+</html>

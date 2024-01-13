@@ -1,3 +1,10 @@
 {
-    "type": "module"
+    "type": "module",
+    "scripts": {
+        "start": "node ./main.js",
+        "dev": "nodemon ./main.js"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.2"
+    }
 }

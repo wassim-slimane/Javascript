@@ -1,17 +1,24 @@
-const Article = class {
-    type;
-    #price;
-    #description;
+function Article(type, name) {
+    this.type = type;
+    this.name = name;
 
-    constructor(type, price, description="") {
-        this.type = type;
-        this.#price = price;
-        this.#description = description;
-
-        Object.seal(this);
+    this.describe = () => {
+        console.log(`This is the description of the article : ${type} - ${name}`);
     }
+    
+    // type;
+    // #price;
+    // #description;
 
-    static nb = 5;
+    // constructor(type, price, description="") {
+    //     this.type = type;
+    //     this.#price = price;
+    //     this.#description = description;
+
+    //     Object.seal(this);
+    // }
+
+    // static nb = 5;
 }
 
 export default Article;

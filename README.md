@@ -10,3 +10,9 @@ Use it to manipulate a structured and related (`key-value`) data set.
 
 ### Constructors
 Allows you to create a prototype (JS object). Useful when you want to create more than one object with the same properties and methods 
+
+
+## Docker
+ - npm install
+ - may be create the db folder and/or the db files (live.json, ...)
+ - npm run dev / npm start

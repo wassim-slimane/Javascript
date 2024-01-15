@@ -2,9 +2,13 @@
     "type": "module",
     "scripts": {
         "start": "node ./main.js",
-        "dev": "nodemon ./main.js"
+        "dev": "nodemon ./main.js",
+        "serve": "http-server -p 3000"
     },
     "devDependencies": {
         "nodemon": "^3.0.2"
+    },
+    "dependencies": {
+        "http-server": "^14.1.1"
     }
 }

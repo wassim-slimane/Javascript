@@ -1,4 +1,4 @@
-import User from "../../classes/User.js";
+import User from "../../Models/User.js";
 
 const handleUserForm = {
     validator(data) {

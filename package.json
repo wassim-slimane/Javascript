@@ -4,7 +4,7 @@
         "start": "node ./main.js",
         "dev": "nodemon ./main.js",
         "serve": "http-server -p 3000",
-        "db": "json-server --watch db.json -p 4000"
+        "db": "json-server --watch db.json --port 4000"
     },
     "devDependencies": {
         "json-server": "^1.0.0-alpha.21",

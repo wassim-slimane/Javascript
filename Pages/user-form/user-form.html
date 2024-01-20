@@ -35,8 +35,8 @@
 </html>
 <script type="module">
     import handleUserForm from "./user-form.js";
+    import {createUserRequest} from "../../services/userRequests.js"
 
-    const userForm = Object.create(handleUserForm);
 
     const btnSubmit = document.querySelector('#register');
     btnSubmit.onclick = (event) => {
@@ -57,11 +57,11 @@
         data.name = nameElem.value;
         data.age = ageElem.value;
 
-        const validate = userForm.validator(data);
+        const validate = true; // userForm.validator(data);
         if(validate) {
             const selector = document.querySelector(".result");
 
-            userForm.storeData(data)
+            createUserRequest(data)
             .then((data) => data.json())
             .then((user) => {
                 selector.textContent = `Well done ${user.name}, you're now registered`

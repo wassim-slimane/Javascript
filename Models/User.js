@@ -1,7 +1,8 @@
 class User {
     static dateCreation;
 
-    constructor(email="", mdp="", name="", age="") {
+    constructor(email="", mdp="", name="", age="", id=undefined) {
+        this.id = id
         this.email = email;
         this.mdp   = mdp;
         this.name  = name;

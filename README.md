@@ -16,3 +16,8 @@ Allows you to create a prototype (JS object). Useful when you want to create mor
  - npm install
  - may be create the db folder and/or the db files (live.json, ...)
  - npm run dev / npm start
+
+
+## A Rajouter 
+ - Faire npm install
+ - Créer le fichier db.json avec users et articles à l'intérieur (Mettre un code du fichier)

@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <h1>Articles</h1>
+        <br>
+        <li><a href="./new.html">Create a Article</a></li>
+        <br>
+        <div id="article-wrapper">
+
+        </div>
+    </body>
+</html>
+<script type="module">
+    import {getAllArticlesRequest} from "../../services/articleRequests.js"
+
+    getAllArticlesRequest()
+    .then(response => response.json())
+    .then(data => fulFillContent(data));
+
+    const fulFillContent = (articles) => {
+        const article_wrapper = document.querySelector('#article-wrapper')
+        
+        articles.forEach((article) => {
+            const element = document.createElement('div');
+            element.textContent = `Type: ${article.type}, Name: ${article.name}.`
+            article_wrapper.appendChild(element);
+        })
+    }
+
+</script>

@@ -1,5 +1,5 @@
-import User from "./Models/User.js";
-import Article from "./Models/Article.js";
+import User from "../Models/User.js";
+import Article from "../Models/Article.js";
 
 const main = () => {
     const user = new User("wslimane21@gmail.com", "password", "wassim", 23);

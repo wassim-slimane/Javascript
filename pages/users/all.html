@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <h1>Users</h1>
+        <br>
+        <li><a href="./new.html">Create a User</a></li>
+        <br>
+        <div id="user-wrapper">
+
+        </div>
+    </body>
+</html>
+<script type="module">
+    import {getAllUsersRequest} from "../../services/userRequests.js"
+
+    getAllUsersRequest()
+    .then(response => response.json())
+    .then(data => fulFillContent(data));
+
+    const fulFillContent = (users) => {
+        const user_wrapper = document.querySelector('#user-wrapper')
+        
+        users.forEach((user) => {
+            const element = document.createElement('div');
+            element.textContent = `Hey my name is ${user.name} ! I'm ${user.age}.`
+            user_wrapper.appendChild(element);
+        })
+    }
+
+</script>

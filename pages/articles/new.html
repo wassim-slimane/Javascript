@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Create an article</title>
+        <meta name="description" content="Here you can create a new article">
+    </head>
+    <body>
+        <div class="return-home">
+            <a href="../../index.html"><i>&#8592;</i> Return Home</a>
+        </div>
+        <div class="return-home">
+            <a href="./all.html"><i>&#8592;</i> Return all articles</a>
+        </div>
+        <br>
+        <form action="#">
+            <div>
+                <label for="type">Type* :</label>
+                <input type="text" id="type" name="type" placeholder="Enter type" required />
+            </div>
+            <div>
+                <label for="article-name">Name* :</label>
+                <input type="text" id="article-name" name="article-name" placeholder="Enter name" required>
+            </div>
+
+            <div class="submit">
+                <button id="add-article">Add</button>
+            </div>
+        </form>
+        <div class="result"></div>
+    </body>
+</html>
+<script type="module">
+    import {createArticleRequest} from "../../services/articleRequests.js"
+    import articleValidator from "../../services/articleValidator.js"
+
+
+    const btnSubmit = document.querySelector('#add-article');
+    btnSubmit.onclick = (event) => {
+        event.preventDefault();
+
+        const data = {};
+
+        data.type = document.querySelector("#type").value;
+        data.name = document.querySelector("#article-name").value;
+
+        const selector = document.querySelector(".result");
+        const validate = articleValidator(data);
+        
+        if(validate) {
+            createArticleRequest(data)
+            .then(data => data.json())
+            .then(article => selector.textContent = `Well done, ${article.name} is now registered`)
+            .catch((error) => {
+                selector.textContent = `Something wrong happend, please try again`
+                throw new Error(error);
+            })
+        } else {
+            selector.textContent = `Something wrong happend, please try again`
+            throw new Error('Validation failed');
+        }
+
+    };
+</script>

@@ -5,18 +5,12 @@ function Article(type, name) {
     this.describe = () => {
         console.log(`This is the description of the article : ${type} - ${name}`);
     }
+
+    Object.seal(this);
     
     // type;
     // #price;
     // #description;
-
-    // constructor(type, price, description="") {
-    //     this.type = type;
-    //     this.#price = price;
-    //     this.#description = description;
-
-    //     Object.seal(this);
-    // }
 
     // static nb = 5;
 }

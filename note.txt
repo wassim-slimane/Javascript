@@ -1,9 +1,0 @@
-• Faire des pages complètes
-• Ajouter tailwind pour le css
-
-• Faire un tri des fichiers (fichiers de style + form + architectures)
-• Trouver où faire le validator: traitement des données (required, email password) => send error message
-• Voir si c'est possible de mettre en place des tests (avec un outil)
-
-• Alimenter le readme pour comprendre un peu plus le but de l'application et comment elle 
-    fonctionne (Objects.js = cheatsheet for objects in js)

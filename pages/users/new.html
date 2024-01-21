@@ -1,12 +1,14 @@
 <html>
     <head>
-        <title>User Form</title>
+        <title>Create a user</title>
         <meta name="description" content="Here you can register a new user">
-        <link rel="stylesheet" href="../../assets/style/pages/user-form.css">
     </head>
     <body>
         <div class="return-home">
             <a href="../../index.html"><i>&#8592;</i> Return Home</a>
+        </div>
+        <div class="return-home">
+            <a href="./all.html"><i>&#8592;</i> Return all users</a>
         </div>
         <br>
         <form action="#">
@@ -35,6 +37,7 @@
 </html>
 <script type="module">
     import {createUserRequest} from "../../services/userRequests.js"
+    import userValidator from "../../services/userValidator.js"
 
 
     const btnSubmit = document.querySelector('#register');
@@ -55,11 +58,11 @@
         data.password = passwordElem.value;
         data.name = nameElem.value;
         data.age = ageElem.value;
+        
+        const selector = document.querySelector(".result");
+        const validate = userValidator(data);
 
-        const validate = true; // userForm.validator(data);
         if(validate) {
-            const selector = document.querySelector(".result");
-
             createUserRequest(data)
             .then((data) => data.json())
             .then((user) => {
@@ -70,6 +73,7 @@
                 throw new Error(error);
             })
         } else {
+            selector.textContent = `Something wrong happend, please try again`
             throw new Error('Validation failed');
         }
 

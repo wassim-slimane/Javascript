@@ -1,8 +1,8 @@
 {
     "type": "module",
     "scripts": {
-        "start": "node ./testing_models.js",
-        "dev": "nodemon ./testing_models.js",
+        "start": "node ./pages/testing_models.js",
+        "dev": "nodemon ./pages/testing_models.js",
         "serve": "http-server -p 3000",
         "db": "json-server --watch db.json --port 4000"
     },
